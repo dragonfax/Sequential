@@ -73,7 +73,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. */
 	if(!PGEqualObjects(@"rss", [RSS name])) return NO;
 	if(![RSS resolvePrefixForNamespaceURI:@"http://search.yahoo.com/mrss"]) return NO;
 	if(1 != [RSS childCount]) return NO;
-	NSXMLElement *const channel = [[RSS children] lastObject];
+	NSXMLElement *const channel = (NSXMLElement *)[[RSS children] lastObject];
 	if(!PGEqualObjects(@"channel", [channel name])) return NO;
 	NSArray *const titles = [channel elementsForName:@"title"];
 	if([titles count]) [[[self node] identifier] setCustomDisplayName:[[titles lastObject] stringValue]];

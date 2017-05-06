@@ -50,7 +50,8 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. */
 }
 - (CGFloat)progress
 {
-	return [[self cell] progress];
+    PGTimerButtonCell *cell = [self cell];
+	return [cell progress];
 }
 - (void)setProgress:(CGFloat)aFloat
 {

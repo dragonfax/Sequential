@@ -27,7 +27,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. */
 
 extern NSString *const PGDOMDocumentKey;
 
-@interface PGHTMLAdapter : PGContainerAdapter
+@interface PGHTMLAdapter : PGContainerAdapter <WebFrameLoadDelegate>
 {
 	@private
 	WebView *_webView;

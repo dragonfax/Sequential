@@ -243,7 +243,7 @@ enum {
 			NSFileWrapper *const wrapper = [[[NSFileWrapper alloc] initRegularFileWithContents:data] autorelease];
 			[wrapper setPreferredFilename:[[self identifier] displayName]];
 			NSAttributedString *const string = [NSAttributedString attributedStringWithAttachment:[[[NSTextAttachment alloc] initWithFileWrapper:wrapper] autorelease]];
-			[pboard setData:[string RTFDFromRange:NSMakeRange(0, [string length]) documentAttributes:nil] forType:NSRTFDPboardType];
+			[pboard setData:[string RTFDFromRange:NSMakeRange(0, [string length]) documentAttributes:[[NSDictionary alloc]init]] forType:NSRTFDPboardType];
 			wrote = YES;
 		}
 		if([types containsObject:NSFileContentsPboardType]) {

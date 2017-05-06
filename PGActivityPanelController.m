@@ -127,7 +127,8 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. */
 		}
 		return [[[NSAttributedString alloc] initWithString:[item activityDescription] attributes:attrs] autorelease];
 	} else if(tableColumn == progressColumn) {
-		return [NSNumber numberWithDouble:[item progress]];
+        PGActivity *activity = (PGActivity *)item;
+		return [NSNumber numberWithDouble:[activity progress]];
 	}
 	return nil;
 }
@@ -136,7 +137,8 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. */
 
 - (void)outlineView:(NSOutlineView *)outlineView willDisplayCell:(id)cell forTableColumn:(NSTableColumn *)tableColumn item:(id)item
 {
-	if(tableColumn == progressColumn) [cell setHidden:![item progress] || [[item childActivities:YES] count]];
+    PGActivity *activity = (PGActivity *)item;
+	if(tableColumn == progressColumn) [cell setHidden:![activity progress] || [[activity childActivities:YES] count]];
 }
 
 @end

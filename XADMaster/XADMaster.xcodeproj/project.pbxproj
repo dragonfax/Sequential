@@ -5160,9 +5160,14 @@
 				GCC_OPTIMIZATION_LEVEL = s;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = XADMaster_Prefix.pch;
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "@executable_path/../Frameworks";
-				OTHER_CFLAGS = "";
+				LIBRARY_SEARCH_PATHS = /usr/local/opt/openssl/lib/;
+				OTHER_CFLAGS = (
+					"-I/usr/local/opt/openssl/include",
+					"-L/usr/local/opt/openssl/lib",
+				);
 				OTHER_LDFLAGS = (
 					"-weak_framework",
 					UniversalDetector,
@@ -5680,9 +5685,14 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = XADMaster_Prefix.pch;
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "@executable_path/../Frameworks";
-				OTHER_CFLAGS = "";
+				LIBRARY_SEARCH_PATHS = /usr/local/opt/openssl/lib/;
+				OTHER_CFLAGS = (
+					"-I/usr/local/opt/openssl/include",
+					"-L/usr/local/opt/openssl/lib",
+				);
 				OTHER_LDFLAGS = (
 					"-weak_framework",
 					UniversalDetector,

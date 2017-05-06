@@ -36,7 +36,8 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. */
 
 - (void)awakeFromNib
 {
-	[self cell]->isa = [HMBlkButtonCell class]; // As long as we don't add ivars, this is a decent workaround.
+    object_setClass([self cell], [HMBlkButtonCell class]);
+//	[self cell]->isa = [HMBlkButtonCell class]; // As long as we don't add ivars, this is a decent workaround.
 }
 
 @end

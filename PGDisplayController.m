@@ -123,7 +123,7 @@ static inline NSSize PGConstrainSize(NSSize min, NSSize size, NSSize max)
 		if([[PGDocumentController sharedDocumentController] pathFinderRunning]) {
 			if([[[[NSAppleScript alloc] initWithSource:[NSString stringWithFormat:@"tell application \"Path Finder\"\nactivate\nreveal \"%@\"\nend tell", path]] autorelease] executeAndReturnError:NULL]) return;
 		} else {
-			if([[NSWorkspace sharedWorkspace] selectFile:path inFileViewerRootedAtPath:nil]) return;
+			if([[NSWorkspace sharedWorkspace] selectFile:path inFileViewerRootedAtPath:@""]) return;
 		}
 	}
 	NSBeep();
@@ -146,7 +146,7 @@ static inline NSSize PGConstrainSize(NSSize min, NSSize size, NSSize max)
 	[savePanel setCanSelectHiddenExtension:YES];
 	NSWindow *const window = [self windowForSheet];
 	NSString *const file = [[ident naturalDisplayName] stringByDeletingPathExtension];
-	if(window) [savePanel beginSheetForDirectory:nil file:file modalForWindow:window modalDelegate:self didEndSelector:@selector(_setCopyAsDesktopPicturePanelDidEnd:returnCode:contextInfo:) contextInfo:NULL];
+	if(window) [savePanel beginSheetForDirectory:@"" file:file modalForWindow:window modalDelegate:self didEndSelector:@selector(_setCopyAsDesktopPicturePanelDidEnd:returnCode:contextInfo:) contextInfo:NULL];
 	else [self _setCopyAsDesktopPicturePanelDidEnd:savePanel returnCode:[savePanel runModalForDirectory:nil file:file] contextInfo:NULL];
 }
 - (IBAction)moveToTrash:(id)sender
@@ -622,6 +622,8 @@ static inline NSSize PGConstrainSize(NSSize min, NSSize size, NSSize max)
 			switch(type) {
 				case NSKeyDown: dir |= newDir;  break;
 				case NSKeyUp:   dir &= ~newDir; break;
+                default:
+                    break;
 			}
 		} else {
 			switch(dir) {
@@ -1202,7 +1204,7 @@ static inline NSSize PGConstrainSize(NSSize min, NSSize size, NSSize max)
 		[[ident URL] writeToPasteboard:pboard];
 	}
 	NSImage *const image = [[[ident icon] copy] autorelease];
-	[[self window] dragImage:image at:PGOffsetPointByXY(dragImageLocation, 24 - [image size].width / 2, 24 - [image size].height / 2) offset:NSZeroSize event:event pasteboard:pboard source:nil slideBack:YES]; // Left to its own devices, OS X will start the drag image 16 pixels down and to the left of the button, which looks bad at both 16x16 and at 32x32, so always do our own drags.
+	[[self window] dragImage:image at:PGOffsetPointByXY(dragImageLocation, 24 - [image size].width / 2, 24 - [image size].height / 2) offset:NSZeroSize event:event pasteboard:pboard source:image slideBack:YES]; // Left to its own devices, OS X will start the drag image 16 pixels down and to the left of the button, which looks bad at both 16x16 and at 32x32, so always do our own drags.
 	return NO;
 }
 - (id)windowWillReturnFieldEditor:(NSWindow *)window toObject:(id)anObject

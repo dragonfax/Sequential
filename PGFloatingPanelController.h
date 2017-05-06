@@ -41,7 +41,6 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. */
 
 // For overriding:
 @property(readonly) NSString *nibName;
-@property(readonly) NSString *windowFrameAutosaveName;
 - (void)windowWillShow;
 - (void)windowWillClose;
 - (BOOL)setDisplayController:(PGDisplayController *)controller;

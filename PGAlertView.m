@@ -146,7 +146,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. */
 {
 	[[self window] PG_removeObserver:self name:NSWindowWillCloseNotification];
 	if(aWindow) [aWindow PG_addObserver:self selector:@selector(windowWillClose:) name:NSWindowWillCloseNotification];
-	else [self windowWillClose:nil];
+    else [self windowWillClose:[[NSNotification alloc] init]];
 }
 
 #pragma mark -NSObject

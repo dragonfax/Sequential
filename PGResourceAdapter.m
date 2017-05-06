@@ -45,7 +45,7 @@ static NSString *const PGCFBundleTypeMIMETypesKey = @"CFBundleTypeMIMETypes";
 static NSString *const PGCFBundleTypeOSTypesKey = @"CFBundleTypeOSTypes";
 static NSString *const PGCFBundleTypeExtensionsKey = @"CFBundleTypeExtensions";
 
-static NSString *const PGOrientationKey = @"PGOrientation";
+//static NSString *const PGOrientationKey = @"PGOrientation";
 
 #define PGThumbnailSize 128.0f
 

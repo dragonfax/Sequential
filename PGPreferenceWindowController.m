@@ -164,7 +164,7 @@ static PGPreferenceWindowController *PGSharedPrefController = nil;
 	[self _setCurrentPane:PGGeneralPaneIdentifier];
 	[w center];
 	[self _updateSecondaryMouseActionLabel];
-	[self applicationDidChangeScreenParameters:nil];
+    [self applicationDidChangeScreenParameters:[[NSNotification alloc] init]];
 }
 
 #pragma mark -NSObject

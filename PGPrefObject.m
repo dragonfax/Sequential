@@ -50,7 +50,7 @@ static NSString *const PGSortOrderKey = @"PGSortOrder2";
 static NSString *const PGTimerIntervalKey = @"PGTimerInterval";
 static NSString *const PGBaseOrientationKey = @"PGBaseOrientation";
 
-static NSString *const PGSortOrderDeprecatedKey = @"PGSortOrder"; // Deprecated after 1.3.2.
+//static NSString *const PGSortOrderDeprecatedKey = @"PGSortOrder"; // Deprecated after 1.3.2.
 
 @implementation PGPrefObject
 

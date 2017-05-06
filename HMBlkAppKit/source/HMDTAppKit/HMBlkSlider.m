@@ -38,7 +38,8 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. */
 
 - (void)awakeFromNib
 {
-	[self cell]->isa = [HMBlkSliderCell class]; // As long as we don't add ivars, this is a decent workaround.
+    object_setClass([self cell], [HMBlkSliderCell class]);
+//	[self cell]->isa = [HMBlkSliderCell class]; // As long as we don't add ivars, this is a decent workaround.
 }
 
 @end

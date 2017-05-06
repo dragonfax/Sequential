@@ -56,7 +56,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. */
 - (void)windowDidLoad
 {
 	[super windowDidLoad];
-	[self controlTextDidChange:nil];
+	[self controlTextDidChange:[[NSNotification alloc] init]];
 }
 
 #pragma mark -NSObject

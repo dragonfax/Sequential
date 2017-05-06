@@ -1017,6 +1017,8 @@
 /* Begin PBXProject section */
 		2A37F4A9FDCFA73011CA2CEA /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+			};
 			buildConfigurationList = C05733CB08A9546B00998B17 /* Build configuration list for PBXProject "Sequential" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -1585,6 +1587,7 @@
 				INFOPLIST_FILE = Info.plist;
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				PRODUCT_NAME = Sequential;
+				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1596,6 +1599,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				PRODUCT_NAME = Sequential;
 				STRIP_INSTALLED_PRODUCT = YES;
+				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
