@@ -439,11 +439,11 @@ static NSData *StuffItMD5(NSData *data)
 {
 	uint8_t buf[16];
 
-	EVP_MD_CTX ctx;
-	EVP_DigestInit(&ctx,EVP_md5());
-	EVP_DigestUpdate(&ctx,[data bytes],[data length]);
-	EVP_DigestFinal(&ctx,buf,NULL);
-	EVP_MD_CTX_cleanup(&ctx);
+	EVP_MD_CTX *ctx = EVP_MD_CTX_new();
+	EVP_DigestInit(ctx,EVP_md5());
+	EVP_DigestUpdate(ctx,[data bytes],[data length]);
+	EVP_DigestFinal(ctx,buf,NULL);
+	EVP_MD_CTX_free(ctx);
 	
 	return [NSData dataWithBytes:buf length:SIT5_KEY_LENGTH];
 }

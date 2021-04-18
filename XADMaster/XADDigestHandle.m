@@ -51,7 +51,7 @@ digestType:(const EVP_MD *)digesttype correctDigest:(NSData *)correctdigest
 
 -(void)dealloc
 {
-	if(inited) EVP_MD_CTX_cleanup(&ctx);
+	if(inited) EVP_MD_CTX_free(ctx);
 	[parent release];
 	[digest release];
 	[super dealloc];
@@ -59,8 +59,8 @@ digestType:(const EVP_MD *)digesttype correctDigest:(NSData *)correctdigest
 
 -(void)resetStream
 {
-	if(inited) EVP_MD_CTX_cleanup(&ctx);
-	EVP_DigestInit(&ctx,type);
+	if(inited) EVP_MD_CTX_free(ctx);
+	EVP_DigestInit(ctx,type);
 	inited=YES;
 
 	[parent seekToFileOffset:0];
@@ -69,7 +69,7 @@ digestType:(const EVP_MD *)digesttype correctDigest:(NSData *)correctdigest
 -(int)streamAtMost:(int)num toBuffer:(void *)buffer
 {
 	int actual=[parent readAtMost:num toBuffer:buffer];
-	EVP_DigestUpdate(&ctx,buffer,actual);
+	EVP_DigestUpdate(ctx,buffer,actual);
 	return actual;
 }
 
@@ -80,11 +80,11 @@ digestType:(const EVP_MD *)digesttype correctDigest:(NSData *)correctdigest
 	int length=EVP_MD_size(type);
 	if([digest length]!=length) return NO;
 
-	EVP_MD_CTX copy;
-	EVP_MD_CTX_copy(&copy,&ctx);
+	EVP_MD_CTX *copy;
+	EVP_MD_CTX_copy(copy,ctx);
 
 	uint8_t buf[length];
-	EVP_DigestFinal(&ctx,buf,NULL);
+	EVP_DigestFinal(ctx,buf,NULL);
 
 	return memcmp([digest bytes],buf,length)==0;
 }

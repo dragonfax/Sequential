@@ -23,7 +23,7 @@
 	[parent release];
 	[password release];
 
-	if(hmac_inited) HMAC_CTX_cleanup(&hmac);
+	if(hmac_inited) HMAC_CTX_free(&hmac);
 
 	[super dealloc];
 }
@@ -36,16 +36,16 @@ static void DeriveKey(NSData *password,NSData *salt,int iterations,uint8_t *keyb
 
 	for(int i=0;i<blocks;i++)
 	{
-		HMAC_CTX hmac;
+		HMAC_CTX *hmac = HMAC_CTX_new();
 		uint8_t counter[4]={(i+1)>>24,(i+1)>>16,(i+1)>>8,i+1};
 		uint8_t buffer[20];
 
-		HMAC_CTX_init(&hmac);
-		HMAC_Init(&hmac,[password bytes],[password length],EVP_sha1());
-		HMAC_Update(&hmac,[salt bytes],[salt length]);
-		HMAC_Update(&hmac,counter,4);
-		HMAC_Final(&hmac,buffer,NULL);
-		HMAC_CTX_cleanup(&hmac);
+		// HMAC_CTX_Init(hmac);
+		HMAC_Init(hmac,[password bytes],[password length],EVP_sha1());
+		HMAC_Update(hmac,[salt bytes],[salt length]);
+		HMAC_Update(hmac,counter,4);
+		HMAC_Final(hmac,buffer,NULL);
+		HMAC_CTX_free(hmac);
 
 		int blocklen=20;
 		if(blocklen+i*20>keylength) blocklen=keylength-i*20;
@@ -73,10 +73,10 @@ static void DeriveKey(NSData *password,NSData *salt,int iterations,uint8_t *keyb
 	AES_set_encrypt_key(keybuf,keybytes*8,&key);
 	memset(counter,0,16);
 
-	if(hmac_inited) HMAC_CTX_cleanup(&hmac);
+	if(hmac_inited) HMAC_CTX_free(hmac);
 
-	HMAC_CTX_init(&hmac);
-	HMAC_Init(&hmac,keybuf+keybytes,keybytes,EVP_sha1());
+	HMAC_CTX_reset(hmac);
+	HMAC_Init(hmac,keybuf+keybytes,keybytes,EVP_sha1());
 
 	hmac_inited=YES;
 	hmac_done=NO;

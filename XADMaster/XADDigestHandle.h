@@ -10,7 +10,7 @@
 	NSData *digest;
 
 	const EVP_MD *type;
-	EVP_MD_CTX ctx;
+	EVP_MD_CTX *ctx;
 	BOOL inited;
 }
 

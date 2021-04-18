@@ -12,7 +12,7 @@
 
 	AES_KEY key;
 	uint8_t counter[16],aesbuffer[16];
-	HMAC_CTX hmac;
+	HMAC_CTX *hmac;
 	BOOL hmac_inited,hmac_done,hmac_correct;
 }
 
