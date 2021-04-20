@@ -850,26 +850,12 @@
 			remoteGlobalIDString = 1B23DDBF1185EBA300620319;
 			remoteInfo = unar;
 		};
-		1B467B2915CD9B4D001AB1DD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 56FBC8DC0A57531D00BE98CF /* UniversalDetector.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1B467B2615CD9B1F001AB1DD;
-			remoteInfo = libUniversalDetector.ios.a;
-		};
 		1B5A7BBB0A24FB2400B189EB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
 			remoteInfo = XADMaster;
-		};
-		1B91CBE811D821C50081E40A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 56FBC8DC0A57531D00BE98CF /* UniversalDetector.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1B91CBE011D821A70081E40A;
-			remoteInfo = "libUniversalDetector (Windows)";
 		};
 		1B91D17B11E1677B0081E40A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -1623,8 +1609,6 @@
 			children = (
 				1B06D3770DDA5C2600D9C000 /* UniversalDetector.framework */,
 				1B23E08C1190F2B400620319 /* libUniversalDetector.a */,
-				1B91CBE911D821C50081E40A /* libUniversalDetector.win.a */,
-				1B467B2A15CD9B4D001AB1DD /* libUniversalDetector.ios.a */,
 				1B06D3790DDA5C2600D9C000 /* DetectorTest */,
 			);
 			name = Products;
@@ -2976,20 +2960,6 @@
 			remoteRef = 1B23E08B1190F2B400620319 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		1B467B2A15CD9B4D001AB1DD /* libUniversalDetector.ios.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libUniversalDetector.ios.a;
-			remoteRef = 1B467B2915CD9B4D001AB1DD /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		1B91CBE911D821C50081E40A /* libUniversalDetector.win.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libUniversalDetector.win.a;
-			remoteRef = 1B91CBE811D821C50081E40A /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -3746,6 +3716,7 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				SYMROOT = ../build;
 				USE_HEADERMAP = NO;
 			};
@@ -4032,6 +4003,7 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				SYMROOT = ../build;
 				USE_HEADERMAP = NO;
 			};
