@@ -282,7 +282,10 @@ static NSSize PGRoundedCornerSizes[4];
 		return;
 	}
 	CGContextRef const windowContext = [[[self window] graphicsContext] graphicsPort];
-	NSParameterAssert(windowContext);
+	// NSParameterAssert(windowContext);
+    if(!windowContext) {
+        return;
+    }
 	CGLayerRef const layer = CGLayerCreateWithContext(windowContext, NSSizeToCGSize(_immediateSize), NULL);
 	NSGraphicsContext *const oldContext = [NSGraphicsContext currentContext];
 	NSGraphicsContext *const layerContext = [NSGraphicsContext graphicsContextWithGraphicsPort:CGLayerGetContext(layer) flipped:[self isFlipped]];

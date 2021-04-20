@@ -683,8 +683,6 @@
 		<string>i386</string>
 		<string>ppc</string>
 	</array>
-	<key>LSMinimumSystemVersion</key>
-	<string>10.5.8</string>
 	<key>LSMinimumSystemVersionByArchitecture</key>
 	<dict>
 		<key>x86_64</key>
