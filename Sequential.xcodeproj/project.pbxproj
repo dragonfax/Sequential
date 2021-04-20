@@ -236,13 +236,6 @@
 			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
 			remoteInfo = HMBlkAppKit;
 		};
-		A219FDD2162A7B5900EC564E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0E20FCC6109652CE007EE24A /* XADMaster.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1B467B0115CD9A73001AB1DD;
-			remoteInfo = libXADMaster.ios.a;
-		};
 		A219FDD4162A7B5900EC564E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0E20FCC6109652CE007EE24A /* XADMaster.xcodeproj */;
@@ -277,27 +270,6 @@
 			proxyType = 2;
 			remoteGlobalIDString = 1B91D18F11E1677B0081E40A;
 			remoteInfo = lsar;
-		};
-		B576272011FF4DB700053499 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0E20FCC6109652CE007EE24A /* XADMaster.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1B91CD5E11D97E7C0081E40A;
-			remoteInfo = "libXADMaster.a (Windows)";
-		};
-		B576272211FF4DB700053499 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0E20FCC6109652CE007EE24A /* XADMaster.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1B91CDAC11D981E20081E40A;
-			remoteInfo = "unar.exe (Windows)";
-		};
-		B576272411FF4DB700053499 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0E20FCC6109652CE007EE24A /* XADMaster.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1B91D2EE11E694860081E40A;
-			remoteInfo = "lsar.exe (Windows)";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -734,8 +706,6 @@
 			children = (
 				0E20FCDB109652CF007EE24A /* XADMaster.framework */,
 				B576271B11FF4DB700053499 /* libXADMaster.a */,
-				B576272111FF4DB700053499 /* libXADMaster.win.a */,
-				A219FDD3162A7B5900EC564E /* libXADMaster.ios.a */,
 				0E20FCDD109652CF007EE24A /* XADTest */,
 				0E20FCDF109652CF007EE24A /* XADTest2 */,
 				0E20FCE1109652CF007EE24A /* XADTest3 */,
@@ -744,8 +714,6 @@
 				A219FDD7162A7B5900EC564E /* XADTest6 */,
 				B576271D11FF4DB700053499 /* unar */,
 				B576271F11FF4DB700053499 /* lsar */,
-				B576272311FF4DB700053499 /* unar.exe */,
-				B576272511FF4DB700053499 /* lsar.exe */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1116,13 +1084,6 @@
 			remoteRef = 0E3DA4520DB0B6A800BE502B /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		A219FDD3162A7B5900EC564E /* libXADMaster.ios.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libXADMaster.ios.a;
-			remoteRef = A219FDD2162A7B5900EC564E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		A219FDD5162A7B5900EC564E /* XADTest5 */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.executable";
@@ -1156,27 +1117,6 @@
 			fileType = "compiled.mach-o.executable";
 			path = lsar;
 			remoteRef = B576271E11FF4DB700053499 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		B576272111FF4DB700053499 /* libXADMaster.win.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libXADMaster.win.a;
-			remoteRef = B576272011FF4DB700053499 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		B576272311FF4DB700053499 /* unar.exe */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = unar.exe;
-			remoteRef = B576272211FF4DB700053499 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		B576272511FF4DB700053499 /* lsar.exe */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = lsar.exe;
-			remoteRef = B576272411FF4DB700053499 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -1629,7 +1569,7 @@
 				GCC_WARN_UNUSED_LABEL = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/**";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
 				STRIP_INSTALLED_PRODUCT = NO;
@@ -1661,7 +1601,7 @@
 				GCC_WARN_UNUSED_LABEL = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/**";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PLIST_FILE_OUTPUT_FORMAT = binary;
 				PREBINDING = NO;
 			};
