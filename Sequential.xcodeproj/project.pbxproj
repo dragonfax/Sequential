@@ -1605,10 +1605,6 @@
 		C05733CC08A9546B00998B17 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					"$(ARCHS_STANDARD_32_64_BIT)",
-					ppc,
-				);
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)";
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -1643,10 +1639,6 @@
 		C05733CD08A9546B00998B17 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					"$(ARCHS_STANDARD_32_64_BIT)",
-					ppc,
-				);
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_OPTIMIZATION_LEVEL = 3;
